@@ -76,7 +76,7 @@ public class UserRegistration {
 	}
 
 	public void validPassword() {
-		Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9a-zA-Z]).{8,}$");
+		Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$^&+=]).{8,}$");
 
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter user  password");
