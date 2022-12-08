@@ -12,6 +12,7 @@ public class UserRegistration {
 		userRegistration.validSecondName();
 		userRegistration.validEmailId();
 		userRegistration.validPhoneNumber();
+		userRegistration.validPassword();
 	}
 
 	public void validFirstName() {
@@ -71,6 +72,21 @@ public class UserRegistration {
 			System.out.println("PhoneNumber is valid");
 		} else {
 			System.out.println("PhoneNumber  is Invalid");
+		}
+	}
+
+	public void validPassword() {
+		Pattern pattern = Pattern.compile("^[a-z]{8,}");
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter user  password");
+		String password = scanner.next();
+
+		Matcher matcher = pattern.matcher(password);
+		if (matcher.matches()) {
+			System.out.println("password is valid");
+		} else {
+			System.out.println("password  is Invalid");
 		}
 	}
 
