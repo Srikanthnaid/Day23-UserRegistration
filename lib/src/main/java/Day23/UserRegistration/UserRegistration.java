@@ -76,7 +76,7 @@ public class UserRegistration {
 	}
 
 	public void validPassword() {
-		Pattern pattern = Pattern.compile("^[a-z]{8,}");
+		Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z]).{8,}$");
 
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter user  password");
@@ -89,5 +89,6 @@ public class UserRegistration {
 			System.out.println("password  is Invalid");
 		}
 	}
+	
 
 }
