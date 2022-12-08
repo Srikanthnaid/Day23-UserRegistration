@@ -1,20 +1,28 @@
 package Day23.UserRegistration;
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
 
 	public static void main(String[] args) {
-		//call the interface methods;
-		Function function = (FirstName) -> {//lambda expression
-			if (Pattern.matches("^[A-Z]{1}[a-z]{2,}$", FirstName)) {
-				System.out.println("Valid");
-			} else {
-				System.out.println("! Not-Valid");
-			}
-		};
-		function.check("Srikanth");//Pass the argument firstname
-	}
+		UserRegistration userRegistration = new UserRegistration();
+        userRegistration.validFirstName();
+    }
+    public void validFirstName() {
+        Pattern pattern = Pattern.compile("^[A-Z]+[a-zA-Z]{2,}[0-9]*$");
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter user firstname");
+        String firstName = scanner.next();
+
+        Matcher matcher = pattern.matcher(firstName);
+        if (matcher.matches()) {
+            System.out.println("First name is valid");
+        } else {
+            System.out.println("First name is Invalid");
+        }
+    }
 
 }
